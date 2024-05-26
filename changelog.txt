@@ -1,0 +1,68 @@
+151021.204035 - (10/21/15 20:40:35)
+ - pushed forgotten startup script
+
+151010.184015 - (10/10/15 18:40:15)
+ - replaced StartupEntry code with externally maintained startupcode
+ - fixed any errors shown when #Warn is enabled
+ - updated readme
+ - NOTE: this release marks eol for feature updates, (windows 10 now includes the main feature of this script) script bugs will still be fixed as they are discovered.
+
+150727.213748 - (07/27/15 21:37:48)
+ - cleaned up ini code
+ - added auto startup entry creation
+ - added icon check
+
+150601.183933 - (06/01/15 18:39:33)
+ - added 32bit build
+
+150530.005307 - (05/30/15 00:53:07)
+ - fixed "ERROR" being saved to ini instead of blank hotkey
+ - initial code for user selected hotkey started
+
+150528.153105 - (05/28/15 15:31:05)
+ - added restart button to tray menu
+ - updated readme
+
+150528.151835 - (05/28/15 15:18:35)
+ - added changeable hotkey for fastscroll
+ - added changeable fastscroll amount (integers only)
+ - fastscroll now uses a sendmessage loop (instead of multiplying the scroll amount or page up/down; as it was less reliable)
+
+150513.172757 - (05/13/15 17:27:57)
+ - fix: aimp3 not getting activated
+
+150513.133150 - (05/13/15 13:31:50)
+ - re-added compatibility with classic shells startmenu
+ - made it work with open/save-as dialogs
+
+150502.132525 - (05/02/15 13:25:25)
+ - complete rewrite of scrolling functions, simplified and seperated code into functions, software scrolling should be  a little faster due to reduced code path, and native_activate should be a little quicker to respond.
+ - now be compatible with both notepad2 (mdi) and M-HTML help files (partial mdi) due to how SelectTarget works.
+ - code should be overall easier to read and understand.
+
+150428.162308 - (04/28/15 16:23:08)
+ - fixed compatibility with mdi controls (should have been an obvious fix)
+ - *may have partially undid activation check added in 150419.005553, but was needed to properly activate some mdi applications
+
+150427.153231 - (04/27/15 15:32:31)
+ - fixed* make FastScroll global instead of static (oops)
+
+150427.152429 - (04/27/15 15:24:29)
+ - sorted/cleaned script settings
+ - replaced tray proxies with boundfunc objects
+ - replaced Software_NOACTIVATE with boundfunc objects
+ - added FastScroll setting that will scroll page length on VSCROLL/HSCROLL controls and 2x the default on other controls
+ - Fast Scroll option added to tray menu (only toggleable when software scroll is enabled)
+ - rewrote SetHotkey (still not satisfied with it though)
+
+150419.005553 - (04/19/15 00:55:53)
+ - added check to determine if control actually needs activation, to NativeAndActivate.
+ - reformatted Software_NOACTIVATE and changed a few values.
+
+150417.182210 - (04/17/15 18:22:10)
+ - rewrote NativeAndActivate (simpler), should work on a wider range of applications (fixes incompatibility with foobar2k and ccleaner)
+ - now checks for WS_POPUP and decides to use window/control hwnd, then checks for WS_EX_NOACTIVATE or (WS_EX_TOOLWINDOW and WS_POPUP) to decide to activate.
+
+150417.001937 - (04/17/15 00:19:37)
+ - fixed bug that stopped window from being activated, by checking if window is already activated.
+ - small comment change
